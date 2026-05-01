@@ -2,15 +2,19 @@ package com.example.dclassic;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class LibraryActivity extends AppCompatActivity {
+
+    CardView image1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,5 +75,16 @@ public class LibraryActivity extends AppCompatActivity {
 
             return true;
         });
+
+        image1 = findViewById(R.id.image1);
+
+        image1.setOnClickListener(v -> {
+            Intent i = new Intent(
+                    LibraryActivity.this,
+                    DetailActivity.class
+            );
+            startActivity(i);
+        });
+
     }
 }
