@@ -48,7 +48,6 @@ public class LibraryActivity extends AppCompatActivity {
                                 HomeActivity.class
                         )
                 );
-                finish();
             }
 
             else if(id == R.id.nav_profile){
@@ -58,7 +57,6 @@ public class LibraryActivity extends AppCompatActivity {
                                 ProfileActivity.class
                         )
                 );
-                finish();
             }
 
             else if(id == R.id.nav_store){
@@ -68,7 +66,6 @@ public class LibraryActivity extends AppCompatActivity {
                                 StoreActivity.class
                         )
                 );
-                finish();
             }
 
             drawerLayout.closeDrawer(GravityCompat.END);
@@ -76,15 +73,59 @@ public class LibraryActivity extends AppCompatActivity {
             return true;
         });
 
-        image1 = findViewById(R.id.image1);
+        int[] cardIds = {
+                R.id.image1,
+                R.id.image2,
+                R.id.image3,
+                R.id.image4,
+                R.id.image5,
+                R.id.image6
+        };
 
-        image1.setOnClickListener(v -> {
-            Intent i = new Intent(
-                    LibraryActivity.this,
-                    DetailActivity.class
-            );
-            startActivity(i);
-        });
+        // DATA BUKU
+        String[] titles = {
+                "The Keeper",
+                "The Locked Door",
+                "Wish You Were Here",
+                "How to Be Okay",
+                "Wait For Me",
+                "Diary of a Wimpy Kid"
+        };
+
+        String[] authors = {
+                "Tana French",
+                "Freida McFadden",
+                "Jodi Picoult",
+                "Jenny Lawson",
+                "Amy Jo Burns",
+                "Jeff Kinney"
+        };
+
+        int[] images = {
+                R.drawable.book1,
+                R.drawable.book5,
+                R.drawable.book6,
+                R.drawable.book7,
+                R.drawable.book8,
+                R.drawable.book9
+        };
+
+        // LOOP
+        for (int i = 0; i < cardIds.length; i++) {
+
+            CardView card = findViewById(cardIds[i]);
+            int index = i;
+
+            card.setOnClickListener(v -> {
+                Intent intent = new Intent(LibraryActivity.this, DetailActivity.class);
+
+                intent.putExtra("title", titles[index]);
+                intent.putExtra("author", authors[index]);
+                intent.putExtra("image", images[index]);
+
+                startActivity(intent);
+            });
+        }
 
     }
 }
