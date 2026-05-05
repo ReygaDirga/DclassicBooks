@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FAFAFA">
+    android:layout_height="match_parent">
 
+    <!-- MAIN CONTENT -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#FAFAFA"
         android:padding="18dp">
+
+        <!-- HEADER -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,315 +36,26 @@
                 android:src="@drawable/menu"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStores"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/store1"/>
-
-                <TextView
-                    android:text="PT Gramedia Asri Media"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#000000"
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="South Jakarta"
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="8000+ books available"
-                    android:textSize="10sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="★ 4.5"
-                    android:textColor="#F59E0B"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-            <View
-                android:layout_width="12dp"
-                android:layout_height="1dp"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/store2"/>
-
-                <TextView
-                    android:text="PT Gramedia Asri Media"
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:textSize="13sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="Bogong Koeng"
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="3000+ books available"
-                    android:textSize="10sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="★ 3.9"
-                    android:textColor="#F59E0B"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:src="@drawable/store3"
-                    android:scaleType="centerCrop"/>
-
-                <TextView
-                    android:text="Kinokuniya Company Ltd."
-                    android:textStyle="bold"
-                    android:textColor="#000000"
-                    android:textSize="13sp"
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="Central Jakarta"
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="4000+ books available"
-                    android:textSize="10sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="★ 4.7"
-                    android:textColor="#F59E0B"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-
-            <View
-                android:layout_width="12dp"
-                android:layout_height="1dp"/>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:src="@drawable/store4"
-                    android:scaleType="centerCrop"/>
-
-                <TextView
-                    android:text="POST Bookshop"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#000000"
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="South Jakarta"
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="1000+ books available"
-                    android:textSize="10sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="★ 4.3"
-                    android:textColor="#F59E0B"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:src="@drawable/store2"
-                    android:scaleType="centerCrop"/>
-
-                <TextView
-                    android:text="Wonder Bookstore Ashta"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#000000"
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="South Jakarta"
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="7000+ books available"
-                    android:textSize="10sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="★ 4.9"
-                    android:textColor="#F59E0B"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-
-            <View
-                android:layout_width="12dp"
-                android:layout_height="1dp"/>
-
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="110dp"
-                    android:src="@drawable/store1"
-                    android:scaleType="centerCrop"/>
-
-                <TextView
-                    android:text="Periplus"
-                    android:textStyle="bold"
-                    android:textSize="13sp"
-                    android:textColor="#000000"
-                    android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="Central Jakarta"
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="5000+ books available"
-                    android:textSize="10sp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:text="★ 4.1"
-                    android:textColor="#F59E0B"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="50dp"/>
-
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"/>
 
     </LinearLayout>
-</ScrollView>
+
+    <!-- SIDEBAR -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#E7E9EF"
+        app:itemTextColor="#7091AD"
+        app:itemIconTint="#7091AD"
+        app:menu="@menu/drawer_menu"
+        app:headerLayout="@layout/nav_header"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
