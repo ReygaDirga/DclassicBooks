@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.navigation.NavigationView;
@@ -134,12 +136,50 @@ public class HomeActivity extends AppCompatActivity {
                     )
                 );
             }
+
+            else if(id == R.id.nav_logout){
+                startActivity(
+                        new Intent(
+                                HomeActivity.this,
+                                LoginActivity.class
+                        )
+                );
+                finish();
+            }
             drawerLayout.closeDrawer(
                     GravityCompat.END
             );
 
             return true;
         });
+        RecyclerView rvBooks = findViewById(R.id.rvBooks);
 
+        List<Integer> books = Arrays.asList(
+                R.drawable.book1,
+                R.drawable.book2,
+                R.drawable.book3,
+                R.drawable.book4
+        );
+
+        rvBooks.setLayoutManager(
+                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        );
+
+        rvBooks.setAdapter(new BookAdapter(books));
+
+        RecyclerView collections = findViewById(R.id.collections2);
+
+        List<Integer> bookcollec = Arrays.asList(
+                R.drawable.book5,
+                R.drawable.book6,
+                R.drawable.book7,
+                R.drawable.book8
+        );
+
+        collections.setLayoutManager(
+                new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        );
+
+        collections.setAdapter(new BookAdapter(bookcollec));
     }
 }
