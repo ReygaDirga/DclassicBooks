@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -24,8 +25,10 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        String username = getIntent().getStringExtra("username");
+        TextView greeting = findViewById(R.id.greeting);
 
-        // CAROUSEL
+        greeting.setText("Hi, " + username + "!");
         pager = findViewById(R.id.viewPager);
 
         List<Integer> images = Arrays.asList(
@@ -63,8 +66,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
-        // AUTO SLIDE
         Handler handler =
                 new Handler(Looper.getMainLooper());
 

@@ -34,7 +34,7 @@
                     android:id="@+id/greeting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hi, Adriel!"
+                    android:text="Hi"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:textColor="#7091AD"
