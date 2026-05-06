@@ -28,10 +28,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="D'Classics Books"
-                    android:textStyle="bold"
-                    android:textColor="#7091AD"
-                    android:textSize="20sp"
+                    android:text="@string/app_name"
+                    style="@style/H2"
+                    android:textColor="@color/Primary"
                     android:layout_marginStart="10dp"/>
             </LinearLayout>
 
@@ -39,9 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Welcome Back"
-                android:textColor="#7091AD"
-                android:textSize="32sp"
-                android:textStyle="bold"
+                android:textColor="@color/Primary"
+                style="@style/H1"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"/>
 
@@ -49,18 +47,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login in to access your account"
-                android:textColor="#7091AD"
+                android:textColor="@color/Primary"
                 android:layout_gravity="center_horizontal"
-                android:textSize="14sp"/>
+                style="@style/H3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Username"
-                android:textColor="#7091AD"
-                android:textSize="16dp"
-                android:layout_marginTop="50dp"
-                android:textStyle="bold"/>
+                android:textColor="@color/Primary"
+                style="@style/JudulBuku"
+                android:layout_marginTop="50dp" />
 
             <EditText
                 android:id="@+id/etUsername"
@@ -69,17 +66,16 @@
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
                 android:hint="Enter username"
-                android:textColor="#7091AD"
+                android:textColor="@color/Gray"
                 android:background="@drawable/border"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Password"
-                android:textColor="#7091AD"
-                android:textSize="16dp"
-                android:layout_marginTop="20dp"
-                android:textStyle="bold"/>
+                android:textColor="@color/Primary"
+                style="@style/JudulBuku"
+                android:layout_marginTop="20dp" />
 
             <EditText
                 android:id="@+id/etPassword"
@@ -87,7 +83,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
-                android:textColor="#7091AD"
+                android:textColor="@color/Gray"
                 android:hint="Enter password"
                 android:inputType="textPassword"
                 android:background="@drawable/border"/>
@@ -96,9 +92,8 @@
                 android:text="Forgot Password?"
                 android:layout_gravity="end"
                 android:layout_marginTop="8dp"
-                android:textColor="#EF9D7F"
-                android:textSize="16dp"
-                android:textStyle="bold"
+                android:textColor="@color/Secondary"
+                style="@style/H3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -107,9 +102,8 @@
                 android:text="Login"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:textColor="#E7E9EF"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:textColor="@color/Gray"
+                style="@style/H2"
                 android:background="@drawable/button_bg"
                 app:backgroundTint="@null"
                 android:layout_marginTop="30dp"/>
@@ -125,17 +119,16 @@
                     android:text="Don't have an account? "
                     android:layout_gravity="end"
                     android:layout_marginTop="8dp"
-                    android:textColor="#7091AD"
-                    android:textSize="16dp"
+                    android:textColor="@color/Primary"
+                    style="@style/H3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:text="Sign Up"
                     android:layout_gravity="end"
                     android:layout_marginTop="8dp"
-                    android:textColor="#EF9D7F"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
+                    android:textColor="@color/Secondary"
+                    style="@style/H3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>

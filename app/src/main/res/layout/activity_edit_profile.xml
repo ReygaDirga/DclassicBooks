@@ -41,9 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit Profile"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#7091AD"
+                style="@style/H2"
+                android:textColor="@color/Primary"
                 android:layout_gravity="center"/>
 
             <!-- FOTO -->
@@ -59,9 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Upload Foto"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                android:textColor="#7091AD"
+                style="@style/H1"
+                android:textColor="@color/Primary"
                 android:layout_gravity="center"
                 android:layout_marginBottom="16dp"/>
 
@@ -74,13 +72,13 @@
                 android:padding="30dp">
 
                 <TextView
-                    android:textColor="#F4D3C7"
                     android:id="@+id/txtFormSection"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0dp"
                     android:paddingStart="4dp"
                     android:text="Form Section"
+                    android:textColor="@color/Accent"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -88,22 +86,21 @@
 
                 <EditText
                     android:id="@+id/etName"
+                    style="@style/H2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Oktavianus Kimmy Yonata"
-                    android:textStyle="bold"
-                    android:textColor="#E7E9EF"
-                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/Gray"
                     android:paddingBottom="15dp"
-                    android:backgroundTint="#E7E9EF"
-                    android:layout_marginBottom="20dp"/>
+                    android:text="Oktavianus Kimmy Yonata"
+                    android:textColor="@color/Gray" />
 
                 <!-- BIRTH + GENDER -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
 
                     <!-- BIRTH DATE -->
                     <LinearLayout
@@ -113,24 +110,22 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/H2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Birth Date"
-                            android:textSize="20sp"
                             android:paddingStart="4dp"
-                            android:textColor="#F4D3C7"
-                            android:textStyle="bold"/>
+                            android:text="Birth Date"
+                            android:textColor="@color/Accent" />
 
                         <EditText
                             android:id="@+id/etBirth"
+                            style="@style/H2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1/11/2026"
+                            android:backgroundTint="@color/Gray"
                             android:paddingBottom="15dp"
-                            android:textSize="20sp"
-                            android:textColor="#E7E9EF"
-                            android:textStyle="bold"
-                            android:backgroundTint="#E7E9EF"/>
+                            android:text="1/11/2026"
+                            android:textColor="@color/Gray" />
                     </LinearLayout>
 
                     <!-- GENDER -->
@@ -142,75 +137,69 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/H2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Gender"
-                            android:textSize="20sp"
                             android:paddingStart="4dp"
-                            android:textColor="#F4D3C7"
-                            android:textStyle="bold" />
+                            android:text="Gender"
+                            android:textColor="@color/Accent" />
 
                         <EditText
                             android:id="@+id/etGender"
+                            style="@style/H2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Male"
+                            android:backgroundTint="@color/Gray"
                             android:paddingBottom="15dp"
-                            android:textSize="20sp"
-                            android:textColor="#E7E9EF"
-                            android:textStyle="bold"
-                            android:backgroundTint="#E7E9EF"/>
+                            android:text="Male"
+                            android:textColor="@color/Gray" />
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <!-- EMAIL -->
                 <TextView
-                    android:textColor="#F4D3C7"
                     android:id="@+id/txtEmail"
+                    style="@style/H2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0dp"
                     android:paddingStart="4dp"
                     android:text="Email"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/Accent" />
 
                 <EditText
                     android:id="@+id/etEmail"
+                    style="@style/H2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="oktavianus.kimmy@yonata.com"
-                    android:textStyle="bold"
-                    android:textColor="#E7E9EF"
-                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/Gray"
                     android:paddingBottom="15dp"
-                    android:backgroundTint="#E7E9EF"
-                    android:layout_marginBottom="20dp"/>
+                    android:text="oktavianus.kimmy@yonata.com"
+                    android:textColor="@color/Gray" />
 
                 <!-- PHONE -->
                 <TextView
-                    android:textColor="#F4D3C7"
                     android:id="@+id/txtPhone"
+                    style="@style/H2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0dp"
                     android:paddingStart="4dp"
                     android:text="Phone Number"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/Accent" />
 
                 <EditText
                     android:id="@+id/etPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="+62 81219883509"
-                    android:textStyle="bold"
-                    android:textColor="#E7E9EF"
-                    android:textSize="20sp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/Gray"
                     android:paddingBottom="15dp"
-                    android:backgroundTint="#E7E9EF"
-                    android:layout_marginBottom="20dp"/>
+                    android:text="+62 81219883509"
+                    style="@style/H2"
+                    android:textColor="@color/Gray" />
 
                 <!-- BUTTON -->
                 <Button
@@ -218,11 +207,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Save"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="#7091AD"
                     android:background="@drawable/button_bg2"
+                    android:text="Save"
+                    style="@style/H2"
+                    android:textColor="@color/Primary"
                     app:backgroundTint="@null" />
             </LinearLayout>
 
