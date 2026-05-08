@@ -70,12 +70,10 @@ public class LibraryActivity extends AppCompatActivity {
 
         btnNonFiction.setOnClickListener(v -> {
             if (activeFilter.equals("nonfiction")) {
-                // Matikan filter
                 activeFilter = "all";
                 showAllBooks(bookContainer);
                 resetButtonColors(btnFiction, btnNonFiction);
             } else {
-                // Nyalakan filter nonfiction
                 activeFilter = "nonfiction";
                 filterBooks(bookContainer, "nonfiction");
                 setButtonActive(btnNonFiction, btnFiction);

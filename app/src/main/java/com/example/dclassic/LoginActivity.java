@@ -26,17 +26,17 @@ public class LoginActivity extends AppCompatActivity {
             String password = etPassword.getText().toString().trim();
 
             if (username.isEmpty()) {
-                etUsername.setError("Username wajib diisi");
+                etUsername.setError("Username must be filled");
                 return;
             }
 
             if (password.isEmpty()) {
-                etPassword.setError("Password wajib diisi");
+                etPassword.setError("Password must be filled");
                 return;
             }
 
             if (!password.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]+$")) {
-                etPassword.setError("Password harus kombinasi huruf dan angka");
+                etPassword.setError("Password must be combination of alphanumerical");
                 return;
             }
 
