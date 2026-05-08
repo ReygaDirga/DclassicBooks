@@ -16,6 +16,8 @@ import com.google.android.material.navigation.NavigationView;
 
 public class LibraryActivity extends AppCompatActivity {
 
+    String activeFilter = "all";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +56,31 @@ public class LibraryActivity extends AppCompatActivity {
 
         LinearLayout bookContainer = findViewById(R.id.bookContainer);
 
-        btnFiction.setOnClickListener(v -> filterBooks(bookContainer, "fiction"));
-        btnNonFiction.setOnClickListener(v -> filterBooks(bookContainer, "nonfiction"));
+        btnFiction.setOnClickListener(v -> {
+            if (activeFilter.equals("fiction")) {
+                activeFilter = "all";
+                showAllBooks(bookContainer);
+                resetButtonColors(btnFiction, btnNonFiction);
+            } else {
+                activeFilter = "fiction";
+                filterBooks(bookContainer, "fiction");
+                setButtonActive(btnFiction, btnNonFiction);
+            }
+        });
+
+        btnNonFiction.setOnClickListener(v -> {
+            if (activeFilter.equals("nonfiction")) {
+                // Matikan filter
+                activeFilter = "all";
+                showAllBooks(bookContainer);
+                resetButtonColors(btnFiction, btnNonFiction);
+            } else {
+                // Nyalakan filter nonfiction
+                activeFilter = "nonfiction";
+                filterBooks(bookContainer, "nonfiction");
+                setButtonActive(btnNonFiction, btnFiction);
+            }
+        });
 
         int[] cardIds = {
                 R.id.image1, R.id.image2, R.id.image3,
@@ -106,6 +131,27 @@ public class LibraryActivity extends AppCompatActivity {
                 startActivity(intent);
             });
         }
+    }
+
+    private void showAllBooks(LinearLayout container) {
+        for (int i = 0; i < container.getChildCount(); i++) {
+            View child = container.getChildAt(i);
+            if (child.getTag() != null) {
+                child.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+    private void setButtonActive(Button activeBtn, Button inactiveBtn) {
+        activeBtn.setBackgroundTintList(
+                android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#4A6B88"))
+        );
+        inactiveBtn.setBackgroundTintList(null);
+    }
+
+    private void resetButtonColors(Button btn1, Button btn2) {
+        btn1.setBackgroundTintList(null);
+        btn2.setBackgroundTintList(null);
     }
     private void filterBooks(LinearLayout container, String category) {
         for (int i = 0; i < container.getChildCount(); i++) {

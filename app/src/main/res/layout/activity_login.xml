@@ -66,8 +66,11 @@
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
                 android:hint="Enter username"
-                android:textColor="@color/Gray"
-                android:background="@drawable/border"/>
+                android:textColor="@color/Primary"
+                android:maxLines="1"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:background="@drawable/border" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -83,9 +86,11 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:padding="8dp"
-                android:textColor="@color/Gray"
                 android:hint="Enter password"
+                android:textColor="@color/Primary"
+                android:maxLines="1"
                 android:inputType="textPassword"
+                android:imeOptions="actionDone"
                 android:background="@drawable/border"/>
 
             <TextView
