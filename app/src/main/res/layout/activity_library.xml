@@ -80,7 +80,6 @@
     </LinearLayout>
 
     <ScrollView
-        android:id="@+id/bookContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -90,6 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/bookContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
