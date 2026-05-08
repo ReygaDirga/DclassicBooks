@@ -55,6 +55,7 @@
             android:weightSum="2">
 
             <Button
+                android:id="@+id/btnFiction"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
@@ -64,6 +65,7 @@
                 app:backgroundTint="@null"/>
 
             <Button
+                android:id="@+id/btnNonFiction"
                 android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_weight="1"
@@ -78,7 +80,7 @@
     </LinearLayout>
 
     <ScrollView
-        android:id="@+id/bookScroll"
+        android:id="@+id/bookContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -93,8 +95,10 @@
             android:orientation="vertical"
             android:padding="20dp">
 
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/image1"
+                android:tag="fiction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="18dp"
@@ -151,6 +155,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/image2"
+                android:tag="nonfiction"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -203,6 +208,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/image3"
+                android:tag="nonfiction"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -240,17 +246,18 @@
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
-                <ImageButton
-                    android:layout_alignParentEnd="true"
-                    android:background="@null"
-                    android:src="@drawable/love"
-                    android:layout_width="26dp"
-                    android:layout_height="26dp"/>
+                    <ImageButton
+                        android:layout_alignParentEnd="true"
+                        android:background="@null"
+                        android:src="@drawable/love"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"/>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/image4"
+                android:tag="fiction"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -305,6 +312,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/image5"
+                android:tag="nonfiction"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -359,6 +367,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/image6"
+                android:tag="fiction"
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -400,6 +409,7 @@
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
+
                     <ImageButton
                         android:layout_alignParentEnd="true"
                         android:background="@null"
@@ -414,7 +424,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="50dp"/>
-
 
         </LinearLayout>
     </ScrollView>
