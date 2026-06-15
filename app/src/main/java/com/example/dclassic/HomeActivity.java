@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -27,8 +28,14 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
-        String username = getIntent().getStringExtra("username");
+//        String username = getIntent().getStringExtra("username");
+        SharedPreferences prefs =
+                getSharedPreferences("USER_SESSION", MODE_PRIVATE);
+        String username =
+                prefs.getString("username", "guest");
+
         TextView greeting = findViewById(R.id.greeting);
+
 
         greeting.setText("Hi, " + username + "!");
         pager = findViewById(R.id.viewPager);
@@ -138,6 +145,9 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             else if(id == R.id.nav_logout){
+                // Tambahan ini
+                prefs.edit().clear().apply();
+
                 startActivity(
                         new Intent(
                                 HomeActivity.this,

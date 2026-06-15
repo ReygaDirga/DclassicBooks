@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -45,6 +46,18 @@ public class LibraryActivity extends AppCompatActivity {
             }
             else if(id == R.id.nav_store){
                 startActivity(new Intent(LibraryActivity.this, StoreActivity.class));
+            }
+            else if(id == R.id.nav_logout){
+                // Tambahan ini
+                SharedPreferences prefs =
+                        getSharedPreferences("USER_SESSION", MODE_PRIVATE);
+                String username =
+                        prefs.getString("username", "guest");
+
+                prefs.edit().clear().apply();
+
+                startActivity(new Intent(LibraryActivity.this, LoginActivity.class));
+                finish();
             }
 
             drawerLayout.closeDrawer(GravityCompat.END);

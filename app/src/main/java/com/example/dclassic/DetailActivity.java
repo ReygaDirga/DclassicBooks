@@ -16,6 +16,7 @@ public class DetailActivity extends AppCompatActivity {
 
     EditText etAddress, etPhone;
     Button btnPurchase;
+    TextView btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class DetailActivity extends AppCompatActivity {
         txtAuthor.setText("by " + author);
         imgBook.setImageResource(image);
 
-        TextView btnBack = findViewById(R.id.btnBack);
+        btnBack = findViewById(R.id.btnBack);
 
         btnBack.setOnClickListener(v -> {
             finish();

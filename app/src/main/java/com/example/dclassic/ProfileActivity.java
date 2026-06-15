@@ -1,8 +1,11 @@
 package com.example.dclassic; // Pastikan package ini sesuai dengan punyamu
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -21,5 +24,15 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        SharedPreferences prefs =
+                getSharedPreferences("USER_SESSION", MODE_PRIVATE);
+        String username =
+                prefs.getString("username", "guest");
+
+        TextView txtUsername = findViewById(R.id.txtUsername);
+
+
+        txtUsername.setText(username);
     }
 }

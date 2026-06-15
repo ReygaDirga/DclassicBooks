@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,6 +41,14 @@ public class LoginActivity extends AppCompatActivity {
             }
             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
             intent.putExtra("username", username);
+
+            SharedPreferences prefs =
+                    getSharedPreferences("USER_SESSION", MODE_PRIVATE);
+
+            prefs.edit()
+                    .putString("username", username)
+                    .apply();
+
             startActivity(intent);
         });
 
