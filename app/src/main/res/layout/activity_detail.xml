@@ -21,7 +21,8 @@
             android:textStyle="bold"
             android:textColor="#6B8BA4"
             android:textSize="16sp"
-            android:paddingBottom="4dp"/>
+            android:paddingBottom="4dp"
+            android:paddingTop="40dp"/>
 
         <!-- 📘 Section Image + Text -->
         <LinearLayout
@@ -93,7 +94,7 @@
         <!-- 🏷️ Tag -->
 
         <TextView
-            android:id="@+id/txtSynopsis"
+            android:id="@+id/txtTags"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"

@@ -8,7 +8,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
+import androidx.appcompat.app.AlertDialog;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -56,8 +57,34 @@ public class DetailActivity extends AppCompatActivity {
             } else if(!phone.matches("[0-9]+")){
                 Toast.makeText(this, "Phone must be numeric", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Purchase success!", Toast.LENGTH_SHORT).show();
+                showSuccessDialog();
             }
         });
+    }
+
+    private void showSuccessDialog(){
+        AlertDialog dialog =
+                new AlertDialog.Builder(this)
+                        .setTitle("Purchase Success")
+                        .setMessage("Your order has been received and will be processed")
+                        .setCancelable(false)
+
+                        .setPositiveButton("Next", (d, which)->{
+                            startActivity(
+                                    new Intent(
+                                            DetailActivity.this,
+                                            LibraryActivity.class
+                                    )
+                            );
+                            finish();
+
+                        }).create();
+
+        dialog.show();
+        dialog.getButton(
+                AlertDialog.BUTTON_POSITIVE
+        ).setTextColor(
+                getColor(R.color.Primary)
+        );
     }
 }
