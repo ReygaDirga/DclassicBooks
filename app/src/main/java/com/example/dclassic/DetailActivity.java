@@ -1,14 +1,19 @@
 package com.example.dclassic;
 
 import android.os.Bundle;
+import android.view.View;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.view.WindowManager;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import androidx.core.view.ViewCompat;
 import androidx.appcompat.app.AlertDialog;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +28,18 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
+        setContentView(R.layout.activity_detail);
+//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        View rootView = findViewById(R.id.rootScrollView);
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
+            int imeHeight = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom;
+            int navBarHeight = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
+            int bottomPadding = Math.max(imeHeight, navBarHeight);
+            v.setPadding(0, 0, 0, bottomPadding);
+            return insets;
+        });
 
         ImageView imgBook = findViewById(R.id.imgBook);
         TextView txtTitle = findViewById(R.id.txtTitle);

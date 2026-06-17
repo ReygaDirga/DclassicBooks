@@ -48,7 +48,6 @@ public class LibraryActivity extends AppCompatActivity {
                 startActivity(new Intent(LibraryActivity.this, StoreActivity.class));
             }
             else if(id == R.id.nav_logout){
-                // Tambahan ini
                 SharedPreferences prefs =
                         getSharedPreferences("USER_SESSION", MODE_PRIVATE);
                 String username =

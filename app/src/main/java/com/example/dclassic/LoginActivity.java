@@ -3,11 +3,15 @@ package com.example.dclassic;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.SharedPreferences;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.ViewCompat;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,7 +24,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         setContentView(R.layout.activity_login);
+
+        View rootView = findViewById(R.id.rootScrollView);
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
+            int imeHeight = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom;
+            int navBarHeight = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
+            int bottomPadding = Math.max(imeHeight, navBarHeight);
+            v.setPadding(0, 0, 0, bottomPadding);
+            return insets;
+        });
 
         startBtn = findViewById(R.id.startBtn);
         signUpBtn = findViewById(R.id.signUpBtn);

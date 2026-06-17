@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.ViewCompat;
+import android.view.View;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText etUsername, etPassword, etConfirmPassword;
@@ -19,6 +22,15 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_signup);
+
+        View rootView = findViewById(R.id.rootScrollView);
+        ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
+            int imeHeight = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom;
+            int navBarHeight = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
+            int bottomPadding = Math.max(imeHeight, navBarHeight);
+            v.setPadding(0, 0, 0, bottomPadding);
+            return insets;
+        });
 
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
